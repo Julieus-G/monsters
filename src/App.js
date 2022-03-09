@@ -33,7 +33,7 @@ class App extends Component {
 
   render() {
     const { monsters, searchField } = this.state;
-    // const { onSearchChange} = this;
+    const { onSearchChange} = this;
 
     const filteredMonsters = monsters.filter((monster) => {
       return monster.name.toLocaleLowerCase().includes(searchField);
@@ -41,8 +41,9 @@ class App extends Component {
 
     return (
       <div className="App">
+        <h1 className="app-title">Monster Roledex</h1>
         <SearchBox
-          onChangeHandler={this.onSearchChange}
+          onChangeHandler={onSearchChange}
           placeholder="search monsters"
           className="monsters-search-box"
         />
